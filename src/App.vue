@@ -134,22 +134,22 @@ export default {
   <div class="control">
     <Input v-model:value="search" label="Поиск по имени, дому и альтернативным именам"/>
     <Select :options="sortOptions" v-model:current-value="sortMode" label="Сортировать по:"></Select>
-<!--    <Select :options="hogwartsStaffFilterOption" v-model:current-value="hogwartsStaffFilterValue"-->
-<!--            label="Сотрудник?"></Select>-->
-<!--    <Select :options="actorFilterOption" v-model:current-value="actorFilterValue" label="Актёр"></Select>-->
-<!--    <Button @click="resetFilters">Сбросить</Button>-->
-<!--    <div v-if="!currentUser" class="auth_block">-->
-<!--      <Button @click="registerOpen=true">Регистрация</Button>-->
-<!--      <Button @click="loginOpen=true">Войти</Button>-->
-<!--    </div>-->
+    <Select :options="hogwartsStaffFilterOption" v-model:current-value="hogwartsStaffFilterValue"
+            label="Сотрудник?"></Select>
+    <Select :options="actorFilterOption" v-model:current-value="actorFilterValue" label="Актёр"></Select>
+    <Button @click="resetFilters">Сбросить</Button>
+    <div v-if="!currentUser" class="auth_block">
+      <Button @click="registerOpen=true">Регистрация</Button>
+      <Button @click="loginOpen=true">Войти</Button>
+    </div>
 
-<!--    <div class="favorite_stat__wrapper" v-if="!!currentUser">-->
-<!--      <p>Избранное:</p>-->
-<!--      <div class="favorite_stat">-->
-<!--        <p>Волшебники: {{favoriteWizardCount}}</p>-->
-<!--        <p>Не волшебники: {{favoriteNoWizardCount}}</p>-->
-<!--      </div>-->
-<!--    </div>-->
+    <div class="favorite_stat__wrapper" v-if="!!currentUser">
+      <p>Избранное:</p>
+      <div class="favorite_stat">
+        <p>Волшебники: {{favoriteWizardCount}}</p>
+        <p>Не волшебники: {{favoriteNoWizardCount}}</p>
+      </div>
+    </div>
   </div>
   <hero-list :heroes="sortedHeroes" @openHero="hero => this.selectedHero=hero"
              :favorite-heroes="this.currentUser?.favorite" @toggleFavorite="toggleFavorite"/>
